@@ -1,0 +1,4 @@
+# esc-token-price
+
+glide factory: 0xaAbe38153b25f0d4b2bDa620f67059B3a45334e5
+glide init hash code: 0xec67b2700fcbc06d227dbd9b65a9fe8962750aaf96eadc6caf4b94d8d60c1da5
