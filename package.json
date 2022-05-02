@@ -1,0 +1,24 @@
+{
+  "name": "esc-token-price",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "@ethersproject/address": "^5.6.0",
+    "@ethersproject/contracts": "^5.6.0",
+    "@ethersproject/networks": "^5.6.2",
+    "@ethersproject/providers": "^5.6.4",
+    "@ethersproject/solidity": "^5.6.0",
+    "@uniswap/sdk": "^3.0.3",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "ioredis": "^5.0.4",
+    "log4js": "^6.3.0",
+    "mongodb": "^3.6.1",
+    "node-fetch": "^2.0.0",
+    "node-schedule": "^2.0.0"
+  }
+}
