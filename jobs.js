@@ -43,14 +43,14 @@ module.exports = {
             return number >= 10 ? number : '' + '0' + number; 
         }
 
-        schedule.scheduleJob({start: new Date(now + 5 * 1000), rule: '*/2 * * * *'}, async () => {
+        schedule.scheduleJob({start: new Date(now + 5 * 1000), rule: '*/1 * * * *'}, async () => {
             let now = new Date();
             let date = '' + now.getFullYear() 
                         + formatNumber(now.getMonth() + 1) 
                         + formatNumber(now.getDate())
                         + formatNumber(now.getHours())
                         + formatNumber(now.getMinutes());
-                        
+
             let price = {date};
 
             let USDCBasedCoinPrice = await getBasedCoinPrices(USDCBasedCoin, USDC);

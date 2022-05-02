@@ -1,4 +1,5 @@
 let MongoClient = require('mongodb').MongoClient;
+let config = require('./config');
 
 module.exports = {
     insertRecord: async function(record) {
