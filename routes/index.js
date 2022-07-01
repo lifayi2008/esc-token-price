@@ -2,13 +2,27 @@ var express = require('express');
 const dbService = require('../dbService');
 var router = express.Router();
 
+function formatNumber(number) {
+  return number >= 10 ? number : '' + '0' + number; 
+}
+
 /* GET home page. */
 router.get('/check', function(req, res, next) {
   res.json({code: 200, message: 'success'});
 });
 
-router.get('/price', function(req, res, next) {
-  let date = req.date;
+router.get('/price', async function(req, res, next) {
+  let date = req.query.date;
+
+  if(!date) {
+    let now = new Date();
+     date = '' + now.getFullYear() 
+              + formatNumber(now.getMonth() + 1) 
+              + formatNumber(now.getDate())
+              + formatNumber(now.getHours())
+              + formatNumber(now.getMinutes());
+  }
+
   // let numberStr = req.num;
   // let dateStr = req.date;
 
@@ -36,7 +50,7 @@ router.get('/price', function(req, res, next) {
   //   }
   // }
 
-  let data = dbService.select(date);
+  let data = await dbService.select(date);
   res.json({code: 200, message: 'success', data})
 })
 

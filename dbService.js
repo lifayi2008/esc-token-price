@@ -22,7 +22,7 @@ module.exports = {
         try {
             await mongoClient.connect();
             const collection = mongoClient.db(config.dbName).collection('esc_prices_record');
-            return await collection.selectOne({date});
+            return await collection.findOne({date});
         } catch (err) {
             logger.error(err);
             throw new Error();
